@@ -18,8 +18,8 @@ body{
 
 .container{
     position:relative;
-    width:320px;
-    height:300px;
+    width:380px;
+    height:340px;
     text-align:center;
 }
 
@@ -49,11 +49,11 @@ canvas{
 <body>
 
 <div class="container">
-    <div class="message">
-        💍 محمد & فاطمة <br><br>
-        الجمعة 20 يونيو 2026 <br>
-        الساعة 8 مساءً
-    </div>
+   <div class="message">
+        💍 Ayman & Aya <br><br>
+        Wednesday 25/3/2026 <br>
+        8 PM
+   </div>
     <canvas id="scratch"></canvas>
 </div>
 
@@ -61,27 +61,30 @@ canvas{
 const canvas = document.getElementById("scratch");
 const ctx = canvas.getContext("2d");
 
-canvas.width = 320;
-canvas.height = 300;
+canvas.width = 380;
+canvas.height = 340;
 
 /* رسم شكل القلب */
-ctx.fillStyle = "#d4af37";
+/* رسم شكل القلب بلون Rose Gold */
+ctx.fillStyle = "#b76e79";
 ctx.beginPath();
-ctx.moveTo(160, 260);
-ctx.bezierCurveTo(320, 150, 250, 20, 160, 100);
-ctx.bezierCurveTo(70, 20, 0, 150, 160, 260);
+ctx.moveTo(190, 310);
+ctx.bezierCurveTo(380, 170, 300, 20, 190, 120);
+ctx.bezierCurveTo(80, 20, 0, 170, 190, 310);
 ctx.fill();
 
-/* تأثير لمعة */
-let gradient = ctx.createLinearGradient(0,0,320,300);
-gradient.addColorStop(0,"#fff8dc");
-gradient.addColorStop(0.5,"#d4af37");
-gradient.addColorStop(1,"#b8860b");
+/* لمعة ناعمة */
+let gradient = ctx.createLinearGradient(0,0,380,340);
+gradient.addColorStop(0,"#ffd1dc");
+gradient.addColorStop(0.5,"#b76e79");
+gradient.addColorStop(1,"#8b5e65");
+
 ctx.globalCompositeOperation = "source-atop";
 ctx.fillStyle = gradient;
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 ctx.globalCompositeOperation = "destination-out";
+
 
 let isDrawing = false;
 
